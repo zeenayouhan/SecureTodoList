@@ -1,0 +1,10 @@
+{
+  "expo": {
+    "name": "SecureToDoList",
+    "slug": "SecureToDoList",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
