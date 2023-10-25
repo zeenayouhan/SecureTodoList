@@ -24,7 +24,7 @@ export default () => {
       onStateChange={onNavStateChange}
       independent
     >
-      <AppRoutes isAuthenticated={true} />
+      <AppRoutes isAuthenticated={false} />
     </NavigationContainer>
   );
 };
