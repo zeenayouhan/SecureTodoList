@@ -1,0 +1,4 @@
+export enum ACTIONS {
+  //Auth
+  SET_AUTHENTICATED_USER = 'SET_AUTHENTICATED_USER',
+}

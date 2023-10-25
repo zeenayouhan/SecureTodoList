@@ -1,9 +1,12 @@
 import { NavigationContainer, Route } from '@react-navigation/native';
 import React, { useRef, useState } from 'react';
+import { useSelector } from 'react-redux';
+import { isAuthenticatedUserSelector } from '../common/selectors/authSelector.selector';
 import { AppRoutes } from './AppRoutes';
 import { navigationRef } from './NavigatorService';
 
 export default () => {
+  const isAuthenticated = useSelector(isAuthenticatedUserSelector);
   const routeNameRef = useRef<string>('');
   const onNavStateChange = async () => {
     if (routeNameRef && navigationRef) {
@@ -24,7 +27,7 @@ export default () => {
       onStateChange={onNavStateChange}
       independent
     >
-      <AppRoutes isAuthenticated={false} />
+      <AppRoutes isAuthenticated={isAuthenticated} />
     </NavigationContainer>
   );
 };

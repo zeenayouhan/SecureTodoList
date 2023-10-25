@@ -6,9 +6,14 @@ import colors from '../../res/colors';
 import * as LocalAuthentication from 'expo-local-authentication';
 import { Linking } from 'react-native';
 import authenticationManager from '../../common/lib/authenticationManager';
+import { navigate } from '../../navigation/NavigatorService';
+import SCREENS from '..';
+import { useDispatch } from 'react-redux';
+import { authenticateUser } from '../../common/actions/auth.actions';
 
 const OnboardingScreen = () => {
   const [authenticationResult, setAuthenticationResult] = useState('');
+  const dispatch = useDispatch();
   const openSettings = async () => {
     try {
       const isEnrolled = await authenticationManager.isHardwareSupported();
@@ -20,7 +25,8 @@ const OnboardingScreen = () => {
       ) {
         const result = await authenticationManager.authenticate();
         if (result.success) {
-          //navigate to home screen
+          dispatch(authenticateUser(true));
+          navigate({ name: SCREENS.HOME_SCREEN });
         }
         return null;
       } else {
