@@ -1,8 +1,9 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { View, Text, StyleSheet, TextInput, FlatList } from 'react-native';
+import { items } from '../../common/constants/HomeScreen.contants';
 import ItemCardComponent from '../../components/ItemCard.component';
 import RoundedButton from '../../components/RoundedButton.component';
-import { getScaledNumber, items } from '../../lib/utils';
+import { getScaledNumber } from '../../lib/utils';
 import colors from '../../res/colors';
 import { Item } from '../../types';
 

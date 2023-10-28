@@ -1,0 +1,22 @@
+{
+  "preset": "@testing-library/react-native",
+  "collectCoverageFrom": ["src/**/*.{ts,tsx}"],
+  "moduleDirectories": ["node_modules", "src"],
+  "setupFiles": ["<rootDir>/setupTests.ts"],
+  "transformIgnorePatterns": [
+    "node_modules/(?!(jest-)?(@?react-native|@?react-navigation|@react-native-community))"
+  ],
+  "testMatch": [
+    "**/__tests__/**/*.test.[jt]s?(x)",
+    "**/?(*.)+(spec|test).[jt]s?(x)"
+  ],
+  "moduleFileExtensions": ["ts", "tsx", "js", "jsx", "json", "node"],
+  "coveragePathIgnorePatterns": [
+    "/node_modules/",
+    "/setupTests.ts",
+    "/src/App.tsx",
+    "/src/root.reducer.ts",
+    "/src/root.saga.ts",
+    "/src/common/constants/"
+  ]
+}

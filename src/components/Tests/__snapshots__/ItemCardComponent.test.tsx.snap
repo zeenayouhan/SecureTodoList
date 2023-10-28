@@ -1,0 +1,146 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Rendering should match to snapshot 1`] = `
+<View
+  accessibilityState={
+    {
+      "busy": undefined,
+      "checked": undefined,
+      "disabled": undefined,
+      "expanded": undefined,
+      "selected": undefined,
+    }
+  }
+  accessibilityValue={
+    {
+      "max": undefined,
+      "min": undefined,
+      "now": undefined,
+      "text": undefined,
+    }
+  }
+  accessible={true}
+  collapsable={false}
+  focusable={true}
+  onClick={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    {
+      "backgroundColor": "#FFFFFF",
+      "borderRadius": 60,
+      "flexDirection": "row",
+      "marginHorizontal": 40,
+      "marginVertical": 20,
+      "opacity": 1,
+      "overflow": "hidden",
+    }
+  }
+  testID="update-button"
+>
+  <View
+    style={
+      {
+        "flexDirection": "row",
+      }
+    }
+  >
+    <View
+      style={
+        {
+          "flexDirection": "row",
+        }
+      }
+    >
+      <Text
+        style={
+          {
+            "color": "#182387",
+            "fontSize": 120,
+            "height": 200,
+            "marginBottom": -80,
+            "marginLeft": 40,
+            "marginTop": -90,
+          }
+        }
+      >
+        •
+      </Text>
+      <Text
+        style={
+          {
+            "color": "#8E8E93",
+            "fontSize": 18,
+            "marginLeft": 10,
+            "marginVertical": 40,
+            "width": 320,
+          }
+        }
+      >
+        Test Label
+      </Text>
+    </View>
+    <View
+      style={
+        {
+          "alignContent": "flex-end",
+        }
+      }
+    >
+      <View
+        accessibilityState={
+          {
+            "busy": undefined,
+            "checked": undefined,
+            "disabled": undefined,
+            "expanded": undefined,
+            "selected": undefined,
+          }
+        }
+        accessibilityValue={
+          {
+            "max": undefined,
+            "min": undefined,
+            "now": undefined,
+            "text": undefined,
+          }
+        }
+        accessible={true}
+        collapsable={false}
+        focusable={true}
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          {
+            "marginRight": 40,
+            "opacity": 1,
+          }
+        }
+      >
+        <Text
+          style={
+            {
+              "color": "#8E8E93",
+              "fontSize": 18,
+              "marginLeft": 10,
+              "marginVertical": 40,
+              "width": 320,
+            }
+          }
+        >
+          REMOVE
+        </Text>
+      </View>
+    </View>
+  </View>
+</View>
+`;

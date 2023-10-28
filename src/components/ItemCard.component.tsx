@@ -19,6 +19,7 @@ const ItemCardComponent = ({
       onPress={onPressUpdate}
       style={styles.cardStyle}
       key={index}
+      testID='update-button'
     >
       <View style={styles.rowStyle}>
         <View style={styles.rowStyle}>
