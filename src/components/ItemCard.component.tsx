@@ -20,13 +20,12 @@ const ItemCardComponent = ({
       style={styles.cardStyle}
       key={index}
     >
-      <View style={styles.contentContainer}>
-        <View style={styles.rawStyle}>
+      <View style={styles.rowStyle}>
+        <View style={styles.rowStyle}>
           <Text style={styles.bulletPoint}>•</Text>
-
           <Text style={styles.labelStyle}>{label}</Text>
         </View>
-        <View style={styles.rawStyle}>
+        <View style={(styles.rowStyle, { alignContent: 'flex-end' })}>
           <TouchableOpacity
             onPress={() => onPressRemove(index)}
             style={styles.removeButton}
@@ -40,7 +39,7 @@ const ItemCardComponent = ({
 };
 
 const styles = StyleSheet.create({
-  rawStyle: { flexDirection: 'row' },
+  rowStyle: { flexDirection: 'row' },
   cardStyle: {
     flexDirection: 'row',
     backgroundColor: colors.white,
@@ -52,7 +51,7 @@ const styles = StyleSheet.create({
   bulletPoint: {
     fontSize: 120,
     color: colors.blue,
-    marginTop: getScaledNumber(-30),
+    marginTop: getScaledNumber(-45),
     height: getScaledNumber(100),
     marginBottom: getScaledNumber(-40),
     marginLeft: getScaledNumber(20),
@@ -60,18 +59,12 @@ const styles = StyleSheet.create({
   labelStyle: {
     fontSize: 18,
     color: colors.gray,
-    marginLeft: getScaledNumber(15),
-    width: getScaledNumber(150),
-    minWidth: getScaledNumber(130),
-    marginVertical: getScaledNumber(35),
+    marginLeft: getScaledNumber(5),
+    width: getScaledNumber(160),
+    marginVertical: getScaledNumber(20),
   },
   removeButton: {
     marginRight: getScaledNumber(20),
-  },
-  contentContainer: {
-    flexDirection: 'row',
-    maxWidth: getScaledNumber(200),
-    justifyContent: 'space-between',
   },
 });
 export default ItemCardComponent;

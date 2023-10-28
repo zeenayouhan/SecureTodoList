@@ -68,11 +68,9 @@ const HomeScreen = () => {
     flatListRef.current.scrollToEnd({ animated: true });
   };
 
-  const setAdd = isAdd || descriptions.length === 0;
+  const todoLabel = isAdd ? 'ADD' : 'UPDATE';
 
-  const todoLabel = setAdd ? 'ADD' : 'UPDATE';
-
-  const todoMethod = setAdd ? handleItemAdd : handleItemUpdate;
+  const todoMethod = isAdd ? handleItemAdd : handleItemUpdate;
 
   const renderOptions = (options: Item) => {
     return (
@@ -88,6 +86,10 @@ const HomeScreen = () => {
   const keyExtractor = (item: Item) => item.key;
 
   const renderItem = ({ item }: { item: Item }) => renderOptions(item);
+
+  const isAddStyle = isAdd
+    ? styles.buttonContentIsAddStyle
+    : styles.buttonContentIsUpdateStyle;
 
   useEffect(() => {
     flatListRef.current?.scrollToEnd({ animated: true });
@@ -105,7 +107,11 @@ const HomeScreen = () => {
           multiline={true}
         />
         <View style={styles.buttonStyle}>
-          <RoundedButton label={todoLabel} onPress={todoMethod} />
+          <RoundedButton
+            label={todoLabel}
+            onPress={todoMethod}
+            buttonContentStyle={isAddStyle}
+          />
         </View>
       </View>
     );
@@ -127,21 +133,27 @@ const HomeScreen = () => {
 };
 
 const styles = StyleSheet.create({
+  buttonContentIsUpdateStyle: {
+    width: getScaledNumber(140),
+    height: getScaledNumber(70),
+  },
+  buttonContentIsAddStyle: {
+    width: getScaledNumber(120),
+    height: getScaledNumber(70),
+  },
   buttonStyle: {
-    marginVertical: getScaledNumber(20),
-    paddingHorizontal: getScaledNumber(10),
+    marginVertical: getScaledNumber(5),
+    paddingHorizontal: getScaledNumber(15),
     alignContent: 'flex-end',
   },
   textInputStyle: {
     marginLeft: getScaledNumber(20),
     fontSize: getScaledNumber(20),
     color: colors.gray,
-    width: getScaledNumber(150),
-    lineHeight: getScaledNumber(30),
+    width: '50%',
     borderBottomWidth: 1,
-    borderColor: colors.gray,
-    marginTop: getScaledNumber(20),
-    marginBottom: getScaledNumber(20),
+    borderColor: colors.lightGray,
+    marginVertical: getScaledNumber(20),
   },
   container: {
     flex: 1,
@@ -152,7 +164,7 @@ const styles = StyleSheet.create({
     marginHorizontal: getScaledNumber(20),
     marginVertical: getScaledNumber(30),
     borderRadius: getScaledNumber(30),
-    height: getScaledNumber(100),
+    height: getScaledNumber(90),
     justifyContent: 'space-between',
   },
   titleStyle: {

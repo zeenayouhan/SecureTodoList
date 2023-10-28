@@ -12,7 +12,6 @@ import { useDispatch } from 'react-redux';
 import { authenticateUser } from '../../common/actions/auth.actions';
 
 const OnboardingScreen = () => {
-  const [authenticationResult, setAuthenticationResult] = useState('');
   const dispatch = useDispatch();
   const openSettings = async () => {
     try {

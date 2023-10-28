@@ -1,18 +1,31 @@
 import React from 'react';
-import { StyleSheet, Text, TouchableOpacity } from 'react-native';
+import {
+  StyleProp,
+  StyleSheet,
+  Text,
+  TextStyle,
+  TouchableOpacity,
+  ViewStyle,
+} from 'react-native';
 import { getScaledNumber } from '../lib/utils';
 import colors from '../res/colors';
 
 const RoundedButton = ({
   label,
   onPress,
+  buttonStyle,
+  buttonContentStyle,
 }: {
   label: string;
   onPress: (() => void) | undefined;
+  buttonStyle?: StyleProp<TextStyle>;
+  buttonContentStyle?: StyleProp<ViewStyle>;
 }) => {
+  const buttonLabelStyle = [styles.labelStyle, buttonStyle];
+  const buttonContainerStyle = [styles.container, buttonContentStyle];
   return (
-    <TouchableOpacity onPress={onPress} style={styles.container}>
-      <Text style={styles.labelStyle}>{label}</Text>
+    <TouchableOpacity onPress={onPress} style={buttonContainerStyle}>
+      <Text style={buttonLabelStyle}>{label}</Text>
     </TouchableOpacity>
   );
 };

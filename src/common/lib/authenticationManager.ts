@@ -10,7 +10,7 @@ const getEnrolledSecurityLevel = async () => {
 
 const authenticate = async () => {
   return await LocalAuthentication.authenticateAsync({
-    promptMessage: 'Authenticate with your PIN',
+    promptMessage: 'Please authenticate',
   });
 };
 
