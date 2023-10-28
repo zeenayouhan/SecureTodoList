@@ -12,3 +12,8 @@ export type Reducers = {
 export type AuthReducer = {
   isAuthenticatedUser: boolean;
 };
+
+export type Item = {
+  key: string;
+  label: string;
+};
