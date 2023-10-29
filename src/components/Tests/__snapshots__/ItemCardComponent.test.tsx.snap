@@ -40,7 +40,7 @@ exports[`Rendering should match to snapshot 1`] = `
       "overflow": "hidden",
     }
   }
-  testID="update-button"
+  testID="item-card"
 >
   <View
     style={

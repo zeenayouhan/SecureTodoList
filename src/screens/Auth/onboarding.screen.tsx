@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { Platform, StyleSheet, Text, View } from 'react-native';
 import RoundedButton from '../../components/RoundedButton.component';
 import { getScaledNumber } from '../../lib/utils';
 import colors from '../../res/colors';
@@ -29,10 +29,15 @@ const OnboardingScreen = () => {
         }
         return null;
       } else {
-        Linking.sendIntent('android.settings.SECURITY_SETTINGS');
+        if (Platform.OS === 'android') {
+          Linking.sendIntent('android.settings.SECURITY_SETTINGS');
+        } else {
+          Linking.openURL('app-settings:');
+        }
       }
     } catch (error) {}
   };
+
   return (
     <View style={styles.containerStyle}>
       <Text style={styles.titleStyle}>Set Authentication to Proceed</Text>

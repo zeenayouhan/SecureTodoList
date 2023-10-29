@@ -24,7 +24,7 @@ describe('ItemCardComponent', () => {
     fireEvent.press(removeButton);
     expect(onPressRemove).toHaveBeenCalledTimes(1);
 
-    fireEvent.press(getByTestId('update-button'));
+    fireEvent.press(getByTestId('item-card'));
     expect(onPressUpdate).toHaveBeenCalledTimes(1);
   });
 });

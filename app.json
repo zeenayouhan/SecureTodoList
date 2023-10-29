@@ -3,8 +3,22 @@
     "name": "SecureToDoList",
     "slug": "SecureToDoList",
     "version": "1.0.0",
-    "assetBundlePatterns": [
-      "**/*"
-    ]
+    "assetBundlePatterns": ["**/*"],
+    "ios": {
+      "infoPlist": {
+        "NSFaceIDUsageDescription": "We need to access your face data for authentication."
+      }
+    },
+    "plugins": [
+      [
+        "expo-local-authentication",
+        {
+          "faceIDPermission": "Allow SecureTodoList app to use Face ID."
+        }
+      ]
+    ],
+    "android": {
+      "permissions": ["USE_FINGERPRINT"]
+    }
   }
 }

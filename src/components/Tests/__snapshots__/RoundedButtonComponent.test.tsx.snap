@@ -35,7 +35,7 @@ exports[`Rendering should match to snapshot 1`] = `
       "backgroundColor": "#182387",
       "borderRadius": 60,
       "flexDirection": "row",
-      "height": 100,
+      "height": 110,
       "justifyContent": "center",
       "marginVertical": 20,
       "opacity": 1,

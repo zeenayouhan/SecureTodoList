@@ -39,7 +39,7 @@ const styles = StyleSheet.create({
     paddingVertical: getScaledNumber(16),
     marginVertical: getScaledNumber(10),
     width: getScaledNumber(150),
-    height: getScaledNumber(50),
+    height: getScaledNumber(55),
     padding: getScaledNumber(12),
     backgroundColor: colors.blue,
   },
