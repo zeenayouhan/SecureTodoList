@@ -15,6 +15,7 @@ const HomeScreen = () => {
   const flatListRef = useRef<FlatList>(null);
 
   const handleItemAdd = () => {
+    // handle the adding item functionality
     if (textValue) {
       const newItem = {
         key: (descriptions.length + 1).toString(),
@@ -27,6 +28,7 @@ const HomeScreen = () => {
   };
 
   const handleItemDelete = (itemKey: string) => {
+    // handle the deleting item functionality when clicking 'REMOVE' in each item
     const e = descriptions.find((item) => item.key === selectedItemKey);
     if (!isAdd && e) {
       isSetAdd(true);
@@ -42,6 +44,7 @@ const HomeScreen = () => {
   };
 
   const handleItemUpdate = () => {
+    // update the item using the text input
     if (selectedItemKey && textValue) {
       const updatedDescriptions = descriptions.map((item) =>
         item.key === selectedItemKey
@@ -60,12 +63,14 @@ const HomeScreen = () => {
   };
 
   const handleUpdate = (options: { key: string; label: string }) => {
+     // click the item card to update
     setSelectedItemKey(options.key);
     setTextValue(options.label);
     isSetAdd(false);
   };
 
   const scrollToItemInput = () => {
+    // always scroll to the last added item 
     flatListRef.current.scrollToEnd({ animated: true });
   };
 

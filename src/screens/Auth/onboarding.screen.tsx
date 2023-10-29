@@ -15,13 +15,17 @@ const OnboardingScreen = () => {
   const dispatch = useDispatch();
   const openSettings = async () => {
     try {
+      // check the hardware supported to biometric/pin
       const isEnrolled = await authenticationManager.isHardwareSupported();
+
+      //check the security level (NONE, BIOMETRIC, SECRET)
       const securityLevel =
         await authenticationManager.getEnrolledSecurityLevel();
       if (
         isEnrolled &&
         securityLevel !== LocalAuthentication.SecurityLevel.NONE
       ) {
+        // authenticate with releavant security level
         const result = await authenticationManager.authenticate();
         if (result.success) {
           dispatch(authenticateUser(true));

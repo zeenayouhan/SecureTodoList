@@ -21,13 +21,11 @@ export const AppRoutes = ({
     ? undefined
     : SCREENS.ONBOARDING_SCREEN;
   const renderRoutes = () => {
+    //check whether the user is authenticated successfuly
     if (isAuthenticated) {
       return (
         <>
-          <Stack.Screen
-            name={SCREENS.HOME_SCREEN}
-            component={HomeScreen}
-          />
+          <Stack.Screen name={SCREENS.HOME_SCREEN} component={HomeScreen} />
         </>
       );
     } else {

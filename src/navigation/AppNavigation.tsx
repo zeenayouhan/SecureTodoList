@@ -9,6 +9,7 @@ export default () => {
   const isAuthenticated = useSelector(isAuthenticatedUserSelector);
   const routeNameRef = useRef<string>('');
   const onNavStateChange = async () => {
+    // handle changes in the navigation state
     if (routeNameRef && navigationRef) {
       const currentRoute: Route<string> | undefined =
         navigationRef.current?.getCurrentRoute();
@@ -17,6 +18,7 @@ export default () => {
     }
   };
   const onReady = () => {
+    // setting the initial value of routeNameRef
     routeNameRef.current =
       navigationRef.current?.getCurrentRoute?.()?.name ?? '';
   };
