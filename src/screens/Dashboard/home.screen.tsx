@@ -161,7 +161,7 @@ const styles = StyleSheet.create({
   textInputStyle: {
     marginLeft: getScaledNumber(20),
     fontSize: getScaledNumber(20),
-    color: colors.gray,
+    color: colors.black,
     width: '45%',
     borderBottomWidth: 1,
     borderColor: colors.lightGray,

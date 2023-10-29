@@ -45,7 +45,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     backgroundColor: colors.white,
     marginHorizontal: getScaledNumber(20),
-    marginVertical: getScaledNumber(10),
+    marginTop: getScaledNumber(20),
     borderRadius: getScaledNumber(30),
     overflow: 'hidden',
   },
@@ -58,10 +58,10 @@ const styles = StyleSheet.create({
     marginLeft: getScaledNumber(20),
   },
   labelStyle: {
-    fontSize: 18,
-    color: colors.gray,
+    fontSize: 15,
+    color: colors.darkGray,
     marginLeft: getScaledNumber(5),
-    width: getScaledNumber(160),
+    width: getScaledNumber(180),
     marginVertical: getScaledNumber(20),
   },
   removeButton: {
