@@ -146,15 +146,16 @@ const HomeScreen = () => {
 
 const styles = StyleSheet.create({
   buttonContentIsUpdateStyle: {
-    width: getScaledNumber(140),
-    height: getScaledNumber(70),
+    width: getScaledNumber(130),
+    height: getScaledNumber(60),
   },
   buttonContentIsAddStyle: {
-    width: getScaledNumber(120),
-    height: getScaledNumber(70),
+    width: getScaledNumber(110),
+    height: getScaledNumber(60),
   },
   buttonStyle: {
     marginVertical: getScaledNumber(5),
+    marginBottom: getScaledNumber(10),
     paddingHorizontal: getScaledNumber(15),
     alignContent: 'flex-end',
   },
@@ -166,6 +167,7 @@ const styles = StyleSheet.create({
     borderBottomWidth: 1,
     borderColor: colors.lightGray,
     marginVertical: getScaledNumber(20),
+    textDecorationLine: 'none',
   },
   container: {
     flex: 1,
@@ -174,16 +176,16 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     backgroundColor: colors.white,
     marginHorizontal: getScaledNumber(20),
-    marginVertical: getScaledNumber(30),
+    marginVertical: getScaledNumber(10),
     borderRadius: getScaledNumber(30),
-    height: getScaledNumber(90),
+    height: getScaledNumber(85),
     justifyContent: 'space-between',
   },
   titleStyle: {
     marginLeft: getScaledNumber(30),
     marginBottom: getScaledNumber(10),
     color: colors.blue,
-    fontSize: getScaledNumber(30),
+    fontSize: getScaledNumber(25),
     fontWeight: 'bold',
     marginTop: getScaledNumber(30),
   },

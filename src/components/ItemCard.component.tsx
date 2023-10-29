@@ -45,7 +45,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     backgroundColor: colors.white,
     marginHorizontal: getScaledNumber(20),
-    marginTop: getScaledNumber(20),
+    marginTop: getScaledNumber(10),
     borderRadius: getScaledNumber(30),
     overflow: 'hidden',
   },

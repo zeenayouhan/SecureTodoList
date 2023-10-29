@@ -24,7 +24,7 @@ yarn install
 
 Start the Expo development server
 
-expo start
+npx expo start
 
 You can run your app on a simulator or physical device.
 
