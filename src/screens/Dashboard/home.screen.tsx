@@ -17,8 +17,15 @@ const HomeScreen = () => {
   const handleItemAdd = () => {
     // handle the adding item functionality
     if (textValue) {
+      let highestKey = 0;
+      descriptions.forEach((item) => {
+        let itemKey = parseInt(item.key);
+        if (itemKey > highestKey) {
+          highestKey = itemKey;
+        }
+      });
       const newItem = {
-        key: (descriptions.length + 1).toString(),
+        key: (highestKey + 1).toString(),
         label: `${textValue}`,
       };
       setDescriptions([...descriptions, newItem]);
@@ -29,14 +36,13 @@ const HomeScreen = () => {
 
   const handleItemDelete = (itemKey: string) => {
     // handle the deleting item functionality when clicking 'REMOVE' in each item
-    const e = descriptions.find((item) => item.key === selectedItemKey);
-    if (!isAdd && e) {
+
+    if (itemKey === selectedItemKey) {
       isSetAdd(true);
     }
     const updatedDescriptions = descriptions.filter(
       (item) => item.key !== itemKey
     );
-    setSelectedItemKey(itemKey);
     setDescriptions(updatedDescriptions);
     if (updatedDescriptions.length === 0) {
       setTextValue('');
@@ -52,7 +58,7 @@ const HomeScreen = () => {
           : item
       );
       setDescriptions(updatedDescriptions);
-      setSelectedItemKey(null);
+      setSelectedItemKey(selectedItemKey);
       setTextValue('');
       isSetAdd(true);
     }
@@ -62,15 +68,15 @@ const HomeScreen = () => {
     setTextValue(text);
   };
 
-  const handleUpdate = (options: { key: string; label: string }) => {
-     // click the item card to update
+  const handleUpdate = (options: Item) => {
+    // click the item card to update
     setSelectedItemKey(options.key);
     setTextValue(options.label);
     isSetAdd(false);
   };
 
   const scrollToItemInput = () => {
-    // always scroll to the last added item 
+    // always scroll to the last added item
     flatListRef.current.scrollToEnd({ animated: true });
   };
 
@@ -156,7 +162,7 @@ const styles = StyleSheet.create({
     marginLeft: getScaledNumber(20),
     fontSize: getScaledNumber(20),
     color: colors.gray,
-    width: '50%',
+    width: '45%',
     borderBottomWidth: 1,
     borderColor: colors.lightGray,
     marginVertical: getScaledNumber(20),
